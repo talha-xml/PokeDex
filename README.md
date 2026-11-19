@@ -4,7 +4,7 @@ A clean, responsive Pokédex web application built from scratch using **React** 
 
 ## Live Demo
 
-[View Live Project](https://your-live-demo-link.com) _(Replace with your deployed link, e.g., Vercel or Netlify)_
+[View Live Project] https://pokedex-xk5m.onrender.com/
 
 ## Features
 
