@@ -1,0 +1,609 @@
+/* ==========================================================================
+   Pokémon Detail Page Styles
+   ========================================================================== */
+
+.detail-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+/* Back and Prev/Next Navigation Bar */
+.detail-top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateX(-2px);
+}
+
+.nav-adjacent-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-adjacent-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.nav-adjacent-btn:hover:not(.disabled) {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.nav-adjacent-btn.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Header Card (Artwork + Quick Info)
+   ========================================================================== */
+.detail-header-card {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 36px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 36px;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.artwork-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f8fafc;
+  border-radius: 20px;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.artwork-image {
+  width: 280px;
+  height: 280px;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.1));
+  transition: transform 0.3s ease;
+}
+
+.artwork-image:hover {
+  transform: scale(1.05);
+}
+
+.header-info-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.detail-id {
+  font-size: 14px;
+  font-weight: 800;
+  color: #94a3b8;
+  letter-spacing: 1px;
+}
+
+.detail-category {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: #fee2e2;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.detail-name {
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 800;
+  text-transform: capitalize;
+  letter-spacing: -1.5px;
+  margin-bottom: 16px;
+}
+
+.detail-types {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.detail-types .type-badge {
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 20px;
+  text-transform: capitalize;
+}
+
+.header-primary-desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  background: #f8fafc;
+  border-left: 3px solid var(--primary);
+  padding: 14px 18px;
+  border-radius: 0 12px 12px 0;
+  font-style: italic;
+}
+
+/* ==========================================================================
+   Two Column Grid: Info & Base Stats
+   ========================================================================== */
+.detail-grid-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-bottom: 32px;
+}
+
+.detail-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Basic Info List */
+.basic-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px;
+  background: #f8fafc;
+  border-radius: 12px;
+}
+
+.info-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-secondary);
+}
+
+.info-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.info-item.full-width {
+  grid-column: 1 / -1;
+}
+
+.abilities-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.ability-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.ability-tag.hidden {
+  border-color: #cbd5e1;
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.hidden-badge {
+  font-size: 9px;
+  font-weight: 800;
+  color: var(--primary);
+  text-transform: uppercase;
+  background: #fee2e2;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.gender-ratio {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.gender-male {
+  color: #2563eb;
+}
+
+.gender-female {
+  color: #db2777;
+}
+
+.gender-none {
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   Base Stats Progress Bars
+   ========================================================================== */
+.stats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: 85px 42px 1fr;
+  align-items: center;
+  gap: 12px;
+}
+
+.stat-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-num {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--text-primary);
+  text-align: right;
+}
+
+.stat-bar-track {
+  height: 8px;
+  background: #f1f5f9;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.stat-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.6s ease;
+}
+
+.stat-total-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.stat-total-label {
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-total-num {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+/* ==========================================================================
+   Evolution Chain Section
+   ========================================================================== */
+.evolution-chain-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding: 16px 0;
+}
+
+.evolution-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.evolution-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  border-radius: 16px;
+  background: #f8fafc;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+  min-width: 140px;
+}
+
+.evolution-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.evolution-card.current {
+  border-color: var(--primary);
+  background: #ffffff;
+  box-shadow: 0 4px 16px rgba(220, 38, 38, 0.1);
+}
+
+.evolution-img-wrap {
+  width: 96px;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.evolution-img-wrap img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+}
+
+.evolution-id {
+  font-size: 11px;
+  font-weight: 700;
+  color: #94a3b8;
+}
+
+.evolution-name {
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: capitalize;
+  margin-top: 2px;
+}
+
+.current-badge {
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  background: var(--primary);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-top: 6px;
+}
+
+.evolution-arrow-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 0 4px;
+}
+
+.evolution-condition {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  background: #f1f5f9;
+  padding: 4px 8px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 110px;
+}
+
+.evolution-arrow-icon {
+  font-size: 18px;
+  color: #94a3b8;
+}
+
+/* ==========================================================================
+   Pokédex Descriptions & Game Version Entries
+   ========================================================================== */
+.desc-version-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.version-pill-btn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.version-pill-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.version-pill-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+}
+
+.version-entry-display {
+  background: #f8fafc;
+  padding: 20px;
+  border-radius: 14px;
+  margin-bottom: 22px;
+  border: 1px solid var(--border);
+}
+
+.version-entry-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.version-entry-tag {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--primary);
+}
+
+.version-entry-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-primary);
+}
+
+.ecology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+/* ==========================================================================
+   Loading & Error States
+   ========================================================================== */
+.detail-loading-state,
+.detail-error-state {
+  max-width: 600px;
+  margin: 80px auto;
+  text-align: center;
+  padding: 48px 24px;
+  background: var(--surface);
+  border-radius: 20px;
+  border: 1px solid var(--border);
+}
+
+.detail-spinner {
+  width: 44px;
+  height: 44px;
+  border: 3px solid #f1f5f9;
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 18px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 900px) {
+  .detail-header-card {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px;
+  }
+
+  .artwork-column {
+    padding: 16px;
+  }
+
+  .artwork-image {
+    width: 220px;
+    height: 220px;
+  }
+
+  .detail-grid-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .detail-container {
+    padding: 20px 16px 60px;
+  }
+
+  .detail-top-nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-adjacent-group {
+    justify-content: space-between;
+  }
+
+  .basic-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-row {
+    grid-template-columns: 75px 36px 1fr;
+    gap: 8px;
+  }
+}
+

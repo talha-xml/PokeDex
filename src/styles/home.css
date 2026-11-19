@@ -1,0 +1,213 @@
+.home-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 36px 32px 72px;
+}
+
+.hero-section {
+  padding: 0 0 60px;
+}
+
+.hero-label,
+.section-label {
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.hero-section h1 {
+  margin-top: 22px;
+  font-size: clamp(42px, 6vw, 68px);
+  line-height: 1.12;
+  letter-spacing: -3px;
+  font-weight: 800;
+}
+
+.hero-section h1 span {
+  color: var(--primary);
+}
+
+.hero-section p {
+  margin-top: 20px;
+  max-width: 480px;
+  color: var(--text-secondary);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.pokemon-section {
+  margin-top: 20px;
+}
+
+.heading-title-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.heading-title-row h2 {
+  margin-top: 0;
+  font-size: 28px;
+  letter-spacing: -0.8px;
+}
+
+.sort-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sort-label {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sort-select {
+  height: 42px;
+  padding: 0 38px 0 16px;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 14px) center;
+  background-size: 15px 15px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  outline: none;
+  color: #1e293b;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sort-select:hover {
+  border-color: #94a3b8;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23dc2626' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+.sort-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.12);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23dc2626' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+.sort-select option {
+  padding: 10px 14px;
+  background-color: #ffffff;
+  color: #1e293b;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .home-container {
+    padding: 24px 18px 48px;
+  }
+
+  .hero-section {
+    padding: 0 0 40px;
+  }
+
+  .hero-section h1 {
+    letter-spacing: -2px;
+  }
+}
+
+/* Pokémon collection heading */
+
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.pokemon-count {
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Loading and empty states */
+
+.status-message {
+  padding: 55px 0;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.empty-state {
+  margin-top: 28px;
+  padding: 65px 20px;
+  text-align: center;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+}
+
+.empty-state h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.empty-state p {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.error-message {
+  margin-top: 20px;
+  padding: 14px 18px;
+  background: #fee2e2;
+  color: #991b1b;
+  border-radius: 12px;
+  font-size: 13px;
+}
+
+/* Load more */
+
+.load-more-container {
+  display: flex;
+  justify-content: center;
+  margin: 42px 0 20px;
+}
+
+.load-more-button {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 12px;
+  background: var(--primary);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.load-more-button:hover:not(:disabled) {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.load-more-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
