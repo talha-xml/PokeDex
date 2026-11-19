@@ -2,9 +2,9 @@
 
 A clean, responsive Pokédex web application built from scratch using **React** and custom **CSS**. I created this project to practice working with RESTful APIs, asynchronous JavaScript, and dynamic state management by fetching real-time Pokémon data from the [PokéAPI](https://pokeapi.co).
 
-## Live Demo
+## Live
 
-[View Live Project] https://pokedex-xk5m.onrender.com/
+https://pokedex-xk5m.onrender.com/
 
 ## Features
 
